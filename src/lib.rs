@@ -17,7 +17,7 @@ impl SuggestionsRepository {
         self.suggestions.is_empty()
     }
 
-    pub fn len(&self) -> usize {
+    pub fn size(&self) -> usize {
         self.suggestions.len()
     }
 }
@@ -35,7 +35,7 @@ mod tests {
     #[test]
     fn empty_repository_size() {
         let db = SuggestionsRepository::new();
-        assert_eq!(db.len(), 0);
+        assert_eq!(db.size(), 0);
     }
 
     #[test]
