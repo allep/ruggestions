@@ -1,6 +1,7 @@
 use ruggestions::SuggestionsRepository;
 use std::error::Error;
 use std::fmt;
+use rand::Rng;
 
 struct Config {
     suggestions_file: String,
@@ -51,6 +52,9 @@ fn main() -> Result<(), Box<dyn Error>> {
         "Loaded suggestions repository from: {}",
         config.suggestions_file
     );
+
+    let index = rand::thread_rng().gen_range(0.._db.size());
+    println!("Today's suggestion is: {}", _db.get_suggestion_by_index(index));
 
     Ok(())
 }
