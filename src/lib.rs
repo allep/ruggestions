@@ -65,7 +65,7 @@ mod tests {
 
         let db = SuggestionsRepository::new_from_file(path);
         assert!(db.is_empty());
-        
+
         fs::remove_file(path).unwrap();
     }
 
@@ -97,5 +97,4 @@ mod tests {
     fn panic_on_non_existing_file() {
         let _db = SuggestionsRepository::new_from_file("./non_existing_file.txt");
     }
-
 }
